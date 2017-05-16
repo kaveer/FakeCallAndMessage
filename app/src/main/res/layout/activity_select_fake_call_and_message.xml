@@ -9,9 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.kavsoftware.kaveer.fakecallandmessage.SelectFakeCallAndMessage"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:context="com.kavsoftware.kaveer.fakecallandmessage.SelectFakeCallAndMessage">
 
 
     <Button
@@ -38,14 +36,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintTop_toBottomOf="@+id/imageView"/>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="374dp"
-        android:layout_height="114dp"
-        android:background="@android:color/background_light"
-        app:srcCompat="@drawable/fakebanner"
-        tools:layout_editor_absoluteX="-12dp"
-        tools:layout_editor_absoluteY="-11dp"/>
 
 </android.support.constraint.ConstraintLayout>
