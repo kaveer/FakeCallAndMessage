@@ -27,9 +27,7 @@ public class FakeCall extends AppCompatActivity {
             SetEditText();
             if (Validation()){
                 String FakeNumber = number.getText().toString();
-
                 FakeRing(FakeNumber);
-
             }
             }
         });
