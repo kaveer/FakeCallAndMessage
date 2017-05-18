@@ -1,11 +1,14 @@
-package com.kavsoftware.kaveer.fakecallandmessage;
+package com.kavsoftware.kaveer.fakecallandmessage.FakeCall;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+
+import com.kavsoftware.kaveer.fakecallandmessage.R;
 
 public class FakeCall extends AppCompatActivity {
     LinearLayout linearLayout;
@@ -21,8 +24,13 @@ public class FakeCall extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SetEditText();
-                Validation();
+            SetEditText();
+            if (Validation()){
+                String FakeNumber = number.getText().toString();
+
+                FakeRing(FakeNumber);
+
+            }
             }
         });
 
@@ -40,9 +48,23 @@ public class FakeCall extends AppCompatActivity {
         });
     }
 
-    private void Validation() {
-        if (number.getText().length() == 0)
+    private void FakeRing(String fakeNumber) {
+        Intent FakeRing = new Intent(FakeCall.this, FakeCallRinging.class);
+        FakeRing.putExtra("fakeNumber", fakeNumber);
+        startActivity(FakeRing);
+    }
+
+
+
+    private Boolean Validation() {
+        Boolean result = true;
+
+        if (number.getText().length() == 0) {
             number.setError("Enter Number to call");
+            return false;
+        }
+
+        return result;
     }
 
     private void SetEditText() {
